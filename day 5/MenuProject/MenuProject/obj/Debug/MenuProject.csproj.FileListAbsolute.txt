@@ -1,0 +1,8 @@
+D:\dot net\day 4\MenuProject\MenuProject\bin\Debug\MenuProject.exe.config
+D:\dot net\day 4\MenuProject\MenuProject\bin\Debug\MenuProject.exe
+D:\dot net\day 4\MenuProject\MenuProject\bin\Debug\MenuProject.pdb
+D:\dot net\day 4\MenuProject\MenuProject\obj\Debug\MenuProject.csproj.AssemblyReference.cache
+D:\dot net\day 4\MenuProject\MenuProject\obj\Debug\MenuProject.csproj.SuggestedBindingRedirects.cache
+D:\dot net\day 4\MenuProject\MenuProject\obj\Debug\MenuProject.csproj.CoreCompileInputs.cache
+D:\dot net\day 4\MenuProject\MenuProject\obj\Debug\MenuProject.exe
+D:\dot net\day 4\MenuProject\MenuProject\obj\Debug\MenuProject.pdb
