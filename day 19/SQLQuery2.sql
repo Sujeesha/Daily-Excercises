@@ -1,0 +1,1 @@
+insert into EmpSalary VALUES(101,Ammu,20000);
