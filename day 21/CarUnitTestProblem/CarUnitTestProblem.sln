@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarNS", "CarNS\CarNS.csproj", "{913ED8D7-6C5C-4EE1-9068-251FF6E523FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarUI", "CarUI\CarUI.csproj", "{B1C5A1FD-E3E8-4030-BEBF-DFB1C1FB547C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTests", "CarTests\CarTests.csproj", "{0F96E3DC-93D9-4603-B8FD-5F032BC3090A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{913ED8D7-6C5C-4EE1-9068-251FF6E523FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{913ED8D7-6C5C-4EE1-9068-251FF6E523FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{913ED8D7-6C5C-4EE1-9068-251FF6E523FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{913ED8D7-6C5C-4EE1-9068-251FF6E523FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1C5A1FD-E3E8-4030-BEBF-DFB1C1FB547C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1C5A1FD-E3E8-4030-BEBF-DFB1C1FB547C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1C5A1FD-E3E8-4030-BEBF-DFB1C1FB547C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1C5A1FD-E3E8-4030-BEBF-DFB1C1FB547C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F96E3DC-93D9-4603-B8FD-5F032BC3090A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F96E3DC-93D9-4603-B8FD-5F032BC3090A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F96E3DC-93D9-4603-B8FD-5F032BC3090A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F96E3DC-93D9-4603-B8FD-5F032BC3090A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA636155-4F63-451C-A636-EE83B0E2BDE2}
+	EndGlobalSection
+EndGlobal

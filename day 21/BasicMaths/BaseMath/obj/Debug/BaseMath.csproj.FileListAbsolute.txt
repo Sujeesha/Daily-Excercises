@@ -1,0 +1,6 @@
+D:\dot net\day 21\BasicMaths\BaseMath\bin\Debug\BaseMath.dll
+D:\dot net\day 21\BasicMaths\BaseMath\bin\Debug\BaseMath.pdb
+D:\dot net\day 21\BasicMaths\BaseMath\obj\Debug\BaseMath.csproj.AssemblyReference.cache
+D:\dot net\day 21\BasicMaths\BaseMath\obj\Debug\BaseMath.csproj.CoreCompileInputs.cache
+D:\dot net\day 21\BasicMaths\BaseMath\obj\Debug\BaseMath.dll
+D:\dot net\day 21\BasicMaths\BaseMath\obj\Debug\BaseMath.pdb
