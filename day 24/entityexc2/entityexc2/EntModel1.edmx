@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EMPDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="ClientNo" />
+          </Key>
+          <Property Name="ClientNo" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Address1" Type="varchar" MaxLength="30" />
+          <Property Name="Address2" Type="varchar" MaxLength="30" />
+          <Property Name="City" Type="varchar" MaxLength="15" />
+          <Property Name="Pincode" Type="numeric" Precision="8" Scale="0" />
+          <Property Name="State" Type="varchar" MaxLength="15" />
+          <Property Name="BalDue" Type="numeric" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Sales">
+          <Key>
+            <PropertyRef Name="OrderNo" />
+          </Key>
+          <Property Name="OrderNo" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="ClientNo" Type="varchar" MaxLength="6" />
+          <Property Name="OrderDate" Type="date" />
+          <Property Name="DelyAddr" Type="varchar" MaxLength="25" />
+          <Property Name="SalesManNo" Type="varchar" MaxLength="6" />
+          <Property Name="DelyType" Type="char" MaxLength="1" />
+          <Property Name="BilledYn" Type="char" MaxLength="1" />
+          <Property Name="DelyDate" Type="date" />
+          <Property Name="OrderStatus" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK__Sales__ClientNo__46B27FE2">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+          <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="ClientNo" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="ClientNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EMPDBModelStoreContainer">
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sales" EntityType="Self.Sales" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Sales__ClientNo__46B27FE2" Association="Self.FK__Sales__ClientNo__46B27FE2">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EMPDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="ClientNo" />
+          </Key>
+          <Property Name="ClientNo" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Pincode" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="State" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="BalDue" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Sales" Relationship="Self.FK__Sales__ClientNo__46B27FE2" FromRole="Client" ToRole="Sales" />
+        </EntityType>
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="OrderNo" />
+          </Key>
+          <Property Name="OrderNo" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClientNo" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="OrderDate" Type="DateTime" Precision="0" />
+          <Property Name="DelyAddr" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SalesManNo" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="DelyType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="BilledYn" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DelyDate" Type="DateTime" Precision="0" />
+          <Property Name="OrderStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Client" Relationship="Self.FK__Sales__ClientNo__46B27FE2" FromRole="Sales" ToRole="Client" />
+        </EntityType>
+        <Association Name="FK__Sales__ClientNo__46B27FE2">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+          <End Role="Sales" Type="Self.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="ClientNo" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="ClientNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EMPDBEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clients" EntityType="Self.Client" />
+          <EntitySet Name="Sales" EntityType="Self.Sale" />
+          <AssociationSet Name="FK__Sales__ClientNo__46B27FE2" Association="Self.FK__Sales__ClientNo__46B27FE2">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EMPDBModelStoreContainer" CdmEntityContainer="EMPDBEntities2">
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="EMPDBModel.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="ClientNo" ColumnName="ClientNo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="BalDue" ColumnName="BalDue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sales">
+            <EntityTypeMapping TypeName="EMPDBModel.Sale">
+              <MappingFragment StoreEntitySet="Sales">
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="ClientNo" ColumnName="ClientNo" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="DelyAddr" ColumnName="DelyAddr" />
+                <ScalarProperty Name="SalesManNo" ColumnName="SalesManNo" />
+                <ScalarProperty Name="DelyType" ColumnName="DelyType" />
+                <ScalarProperty Name="BilledYn" ColumnName="BilledYn" />
+                <ScalarProperty Name="DelyDate" ColumnName="DelyDate" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
