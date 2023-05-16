@@ -1,0 +1,169 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<a href="mailto:Support@contoso.com">Support@contoso.com</a>
+
+
+@*Scalable Vector Graphics (SVG)*@
+@{
+    string message = "foreignObject example with Scalable Vector Graphics (SVG)";
+}
+
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" rx="10" ry="10" width="200" height="200" stroke="black"
+          fill="none" />
+    <foreignObject x="20" y="20" width="160" height="160">
+        <p>@message</p>
+    </foreignObject>
+</svg>
+
+@*Implicit Razor expressions:
+    Implicit Razor expressions start with @ followed by C# code:
+*@
+<p>@DateTime.Now</p>
+<p>@DateTime.IsLeapYear(2016)</p>
+
+@*Explicit Razor expressions:
+Explicit Razor expressions consist of an @ symbol with balanced parenthesis. 
+To render last week's time, the following Razor markup is used:*@
+
+<p>Last week this time: @(DateTime.Now - TimeSpan.FromDays(7))</p>
+
+@{
+    var joe = new Person("Joe", 33);
+}
+
+@*Explicit expressions can be used to concatenate text with an expression result:*@
+<p>Age@(joe.Age)</p>
+
+@*Expression encoding*@
+
+@("<span>Hello World</span>")
+@Html.Raw("<span>Hello World</span>")
+
+@*Razor code blocks
+Razor code blocks start with @ and are enclosed by {}. Unlike expressions, C# code 
+inside code blocks isn't rendered. 
+Code blocks and expressions in a view share the same scope and are defined in order:*@
+
+@{
+    var quote = "The future depends on what you do today. - Mahatma Gandhi";
+}
+<p>@quote</p>
+@{
+    quote = "Hate cannot drive out hate, only love can do that. - Martin Luther King, Jr.";
+}
+<p>@quote</p>
+
+
+@*In code blocks, declare local functions with markup to serve as templating methods:*@
+@{
+    void RenderName(string name)
+    {
+        <p>Name: <strong>@name</strong></p>
+    }
+
+    RenderName("Mahatma Gandhi");
+    RenderName("Martin Luther King, Jr.");
+}
+@*Conditional attribute rendering
+Razor automatically omits attributes that aren't needed. 
+If the value passed in is null or false, the attribute isn't rendered.*@
+
+<div class="@false">False</div>
+<div class="@null">Null</div>
+<div class="@("")">Empty</div>
+<div class="@("false")">False String</div>
+<div class="@("active")">String</div>
+<input type="checkbox" checked="@true" name="true" />
+<input type="checkbox" checked="@false" name="false" />
+<input type="checkbox" checked="@null" name="null" />
+
+@*Conditionals @if, else if, else, and @switch*@
+
+@{
+    int value=10;
+}
+@if (value % 2 == 0)
+{
+    <p>The value was even.</p>
+}
+
+
+@if (value % 2 == 0)
+{
+    <p>The value was even.</p>
+}
+else if (value >= 1337)
+{
+    <p>The value is large.</p>
+}
+else
+{
+    <p>The value is odd and small.</p>
+}
+
+
+@switch (value)
+{
+    case 1:
+        <p>The value is 1!</p>
+        break;
+    case 1337:
+        <p>Your number is 1337!</p>
+        break;
+    default:
+        <p>Your number wasn't 1 or 1337.</p>
+        break;
+}
+
+
+@{
+    var people = new Person[]
+    {
+          new Person("Weston", 33),
+          new Person("Johnathon", 41)
+    };
+}
+
+
+@for (var i = 0; i < people.Length; i++)
+{
+    var person = people[i];
+    <p>Name: @person.Name</p>
+    <p>Age: @person.Age</p>
+}
+
+@foreach (var person in people)
+{
+    <p>Name: @person.Name</p>
+    <p>Age: @person.Age</p>
+}
+
+
+@{
+    var n = 0;
+}
+@while (n < people.Length)
+{
+    var person = people[n];
+    <p>Name: @person.Name</p>
+    <p>Age: @person.Age</p>
+
+    n++;
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        Email: <input type="email" id="Email" value="">
+        <button>Register</button>
+    </div>
+}
