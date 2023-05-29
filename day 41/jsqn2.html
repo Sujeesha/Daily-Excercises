@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+ <title>Day of the Week Form</title>
+
+</head>
+
+<body>
+
+ <h1>Day of the Week Form</h1>
+
+ <form onsubmit="return validateForm()">
+
+  <label for="dayInput">Enter a number (0-6):</label>
+
+  <input type="text" id="dayInput" name="dayInput" required>
+
+  <button type="submit">Submit</button>
+
+ </form>
+
+ <script>
+
+  function validateForm() {
+
+   var dayInput = document.getElementById("dayInput").value;
+
+   var dayNumber = parseInt(dayInput);
+
+   if (dayNumber >= 0 && dayNumber <= 6) {
+
+    // Valid input
+
+    alert("Valid input! The day of the week is: " + getDayOfWeek(dayNumber));
+
+    return true;
+
+   } else {
+
+    // Invalid input
+
+    alert("Wrong Input");
+
+    return false;
+
+   }
+
+  }
+
+  function getDayOfWeek(dayNumber) {
+
+   var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+   return daysOfWeek[dayNumber];
+
+  }
+
+ </script>
+
+</body>
+
+</html>
+

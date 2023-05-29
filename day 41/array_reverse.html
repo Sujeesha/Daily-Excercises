@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <script>
+        let numbers=[];
+        for(let i=0;i<4;i++){
+            let num=parseInt(prompt());
+            numbers.push(num);
+        }
+        document.write(numbers.reverse());
+        document.write("Numbers above 50:");
+        for(let i=0;i<4;i++){
+            if(numbers[i]>50){
+                document.write(numbers[i]," ");
+            }
+        }
+ document.write("<table>");
+ for(i=0;i<4;i++){
+ if(numbers[i]%2 == 0) { // even
+   document.write("<td>"+numbers[i]+"</td><tr>");
+ }
+else{
+document.write("</tr><td>"+numbers[i]+"</td>");
+}
+}
+document.write("</table>");       
+    </script>
+    </body>
+</html>

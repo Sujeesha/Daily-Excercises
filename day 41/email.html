@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>Email Categories</title>
+
+  </head>
+
+  <body>
+
+    <script>
+
+    const emails = [
+
+      'abc@gmail.com',
+
+      'frg@yahoo.com',
+
+      'hgjhg@hotmail.com',
+
+      'hjkgh@infy.com',
+
+      'xyz@hotmail.com',
+
+      'pqr@gmail.com',
+
+      'lmn@yahoo.com',
+
+      'qwe@hotmail.com',
+
+      'zxc@gmail.com',
+
+      'bnm@yahoo.com',
+
+      'poi@hotmail.com',
+
+      'asd@gmail.com',
+
+      'rty@yahoo.com',
+
+      'fgh@hotmail.com',
+
+      'jkl@gmail.com',
+
+      'vbn@yahoo.com',
+
+      'mnb@hotmail.com',
+
+      'qaz@gmail.com',
+
+      'wsx@yahoo.com',
+
+      'edc@hotmail.com',
+
+       'rfv@gmail.com',
+
+      'tgb@yahoo.com',
+
+      'yhn@hotmail.com',
+
+      'uji@gmail.com',
+
+      'klo@yahoo.com',
+
+      'qwe@hotmail.com',
+
+       'asd@gmail.com',
+
+      'zxc@yahoo.com',
+
+      'vbn@hotmail.com',
+
+      'poi@gmail.com'
+
+];
+
+const categories = {
+
+ Google: [],
+
+ Yahoo: [],
+
+ Hotmail: [],
+
+ Others: []
+
+};
+
+for (let i = 0; i < emails.length; i++) {
+
+ const email = emails[i];
+
+ const domain = email.substring(email.indexOf('@') + 1);
+
+ if (domain === 'gmail.com') {
+
+  categories.Google.push(email);
+
+ } else if (domain === 'yahoo.com') {
+
+  categories.Yahoo.push(email);
+
+ } else if (domain === 'hotmail.com') {
+
+  categories.Hotmail.push(email);
+
+ } else {
+
+  categories.Others.push(email);
+
+ }
+
+}
+
+document.write('<h1>Email Categories</h1>');
+
+document.write('<h2>Google</h2>');
+
+document.write('<ul>');
+
+for (let i = 0; i < categories.Google.length; i++) {
+
+ document.write('<li>' + categories.Google[i] + '</li>');
+
+}
+
+document.write('</ul>');
+
+document.write('<h2>Yahoo</h2>');
+
+document.write('<ul>');
+
+for (let i = 0; i < categories.Yahoo.length; i++) {
+
+ document.write('<li>' + categories.Yahoo[i] + '</li>');
+
+}
+
+document.write('</ul>');
+
+document.write('<h2>Hotmail</h2>');
+
+document.write('<ul>');
+
+for (let i = 0; i < categories.Hotmail.length; i++) {
+
+ document.write('<li>' + categories.Hotmail[i] + '</li>');
+
+}
+
+document.write('</ul>');
+
+document.write('<h2>Others</h2>');
+
+document.write('<ul>');
+
+for (let i = 0; i < categories.Others.length; i++) {
+
+ document.write('<li>' + categories.Others[i] + '</li>');
+
+}
+
+document.write('</ul>');
+
+</script></body>
+
+</html>
