@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+</title>
+</head>
+<body>
+<label for="number">Number<label>
+<input type="number" id="number" name="number"><br><br>
+<input type="button" onClick="ResultBy()" value="Submit"><br><br>
+<p>The result is:
+<span id="result"></span>
+</p>
+<script>
+function ResultBy(){
+num=document.getElementById("number").value;
+diff=num-13;
+if(diff>13){
+   diff=2*diff;
+}
+document.getElementById("result").innerHTML=diff;
+}
+</script>
+</body>
+</html>

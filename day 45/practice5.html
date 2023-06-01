@@ -1,0 +1,19 @@
+<script>
+var myinputarr = [];
+var size = 5; // Array size
+for(var a=0; a<size; a++) 
+{	
+	myinputarr[a] = prompt('Enter array Element ' + (a+1));
+}
+console.log(myinputarr);
+var first =  function(myinputarr, size) {
+      if (myinputarr == null) 
+      return void 0;
+    if (size == null) 
+      return myinputarr[0];
+    if (size < 0)
+      return [];
+    return myinputarr.slice(0, size);
+  };
+console.log(first);
+</script>
